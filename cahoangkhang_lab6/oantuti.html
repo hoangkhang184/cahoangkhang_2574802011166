@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h2> Oẳn tù tì</h2>
+    <button onclick="choi('Đá')">Đá</button>
+    <button onclick="choi('Giấy')">Giấy</button>
+    <button onclick="choi('Kéo')">Kéo</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function choi(nguoiChoi) {
+            let danhSach = ["Đá", "Giấy", "Kéo"];
+            let mayChoi = danhSach[Math.floor(Math.random() * danhSach.length)];
+            let ketQua;
+
+            if (nguoiChoi === mayChoi) {
+                ketQua = "Hòa!";
+            } else if ((nguoiChoi === "Đá" && mayChoi === "Kéo") ||
+                       (nguoiChoi === "Giấy" && mayChoi === "Đá") ||
+                       (nguoiChoi === "Kéo" && mayChoi === "Giấy")) {
+                ketQua = "Bạn thắng!";
+            } else {
+                ketQua = "Bạn thua!";
+            }
+            document.getElementById("ketqua").textContent = "Bạn chọn " + nguoiChoi + ", máy chọn " + mayChoi + ". " + ketQua;
+        }
+    </script>
+</body>
+</html>

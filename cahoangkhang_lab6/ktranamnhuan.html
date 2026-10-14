@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h2></h2>Kiểm tra năm nhuận</h2>
+    <label for="nam">Nhập một năm:</label>
+    <input type="number" id="nam" min="1" step="1">
+    <button onclick="kiemTraNamNhuan()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTraNamNhuan() {
+            let giaTri = document.getElementById("nam").value;
+            let nam = Number(giaTri);
+            if (giaTri === "" || !Number.isInteger(nam) || nam < 1) {
+                document.getElementById("ketqua").textContent = "Vui lòng nhập năm nguyên dương.";
+                return;
+            }
+
+            if (nam % 400 === 0 || (nam % 4 === 0 && nam % 100 !== 0)) {
+                document.getElementById("ketqua").textContent = nam + " là năm nhuận.";
+            } else {
+                document.getElementById("ketqua").textContent = nam + " không phải năm nhuận.";
+            }
+        }
+    </script>
+</body>
+</html>

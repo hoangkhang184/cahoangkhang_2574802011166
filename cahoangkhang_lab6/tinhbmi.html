@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h2>Tính chỉ số BMI</h2>
+    <label for="chieucao">Chiều cao (m):</label>
+    <input type="number" id="chieucao" step="any">
+    <br><br>
+    <label for="cannang">Cân nặng (kg):</label>
+    <input type="number" id="cannang" step="any">
+    <button onclick="tinhBMI()">Tính BMI</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function tinhBMI() {
+            let giaTriCao = document.getElementById("chieucao").value;
+            let giaTriNang = document.getElementById("cannang").value;
+            let chieuCao = Number(giaTriCao);
+            let canNang = Number(giaTriNang);
+            if (giaTriCao === "" || giaTriNang === "" || !Number.isFinite(chieuCao) ||
+                !Number.isFinite(canNang) || chieuCao <= 0 || canNang <= 0) {
+                document.getElementById("ketqua").textContent = "Vui lòng nhập chiều cao và cân nặng lớn hơn 0.";
+                return;
+            }
+
+            let bmi = canNang / (chieuCao * chieuCao);
+            if (!Number.isFinite(bmi)) {
+                document.getElementById("ketqua").textContent = "Dữ liệu quá lớn hoặc quá nhỏ để tính BMI.";
+                return;
+            }
+
+            let ketLuan;
+            if (bmi < 18.5) {
+                ketLuan = "Gầy";
+            } else if (bmi < 25) {
+                ketLuan = "Bình thường";
+            } else if (bmi < 30) {
+                ketLuan = "Thừa cân";
+            } else {
+                ketLuan = "Béo phì";
+            }
+            document.getElementById("ketqua").textContent = "BMI: " + bmi.toFixed(2) + ". Kết luận: " + ketLuan;
+        }
+    </script>
+</body>
+</html>

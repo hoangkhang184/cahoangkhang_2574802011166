@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h2>Kiểm tra số chẵn / số lẻ</h2>
+    <label for="so">Nhập số nguyên:</label>
+    <input type="number" id="so" step="1">
+    <button onclick="kiemTra()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            let giaTri = document.getElementById("so").value;
+            let so = Number(giaTri);
+            if (giaTri === "" || !Number.isInteger(so)) {
+                document.getElementById("ketqua").textContent = "Vui lòng nhập một số nguyên.";
+                return;
+            }
+
+            if (so % 2 === 0) {
+                document.getElementById("ketqua").textContent = so + " là số chẵn.";
+            } else {
+                document.getElementById("ketqua").textContent = so + " là số lẻ.";
+            }
+        }
+    </script>
+</body>
+</html>

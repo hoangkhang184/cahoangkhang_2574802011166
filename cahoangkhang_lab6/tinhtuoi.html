@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> chuong trinh tinh tuoi </h2>
+    <label for=""> nhap nam sinh cua ban: </label>
+    <input type="number" id="namsinh">
+    <br> <br>
+    <button onclick="tinhtuoi()"> tinh tuoi </button>
+    <p id="ketqua"></p>
+
+    <script>
+        // viet code js o day
+        function tinhtuoi() {
+            let yourBirth = document.getElementById("namsinh").value;
+            let currentYear = new Date().getFullYear();
+            let yourAge = currentYear - yourBirth;
+            document.getElementById("ketqua").innerHTML = " tuoi cua ban la: " + yourAge;
+           
+        }
+    </script>    
+</body>
+</html

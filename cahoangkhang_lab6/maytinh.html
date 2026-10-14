@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h2>Máy tính đơn giản</h2>
+    <label for="so1">Số thứ nhất:</label>
+    <input type="number" id="so1" step="any">
+    <br><br>
+    <label for="so2">Số thứ hai:</label>
+    <input type="number" id="so2" step="any">
+    <br><br>
+    <button onclick="tinh('+')">Cộng</button>
+    <button onclick="tinh('-')">Trừ</button>
+    <button onclick="tinh('*')">Nhân</button>
+    <button onclick="tinh('/')">Chia</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function tinh(phepTinh) {
+            let giaTri1 = document.getElementById("so1").value;
+            let giaTri2 = document.getElementById("so2").value;
+            let so1 = Number(giaTri1);
+            let so2 = Number(giaTri2);
+            if (giaTri1 === "" || giaTri2 === "" || !Number.isFinite(so1) || !Number.isFinite(so2)) {
+                document.getElementById("ketqua").textContent = "Vui lòng nhập đủ hai số hợp lệ.";
+                return;
+            }
+
+            let ketQua;
+            if (phepTinh === "+") {
+                ketQua = so1 + so2;
+            } else if (phepTinh === "-") {
+                ketQua = so1 - so2;
+            } else if (phepTinh === "*") {
+                ketQua = so1 * so2;
+            } else {
+                if (so2 === 0) {
+                    document.getElementById("ketqua").textContent = "Không thể chia cho 0.";
+                    return;
+                }
+                ketQua = so1 / so2;
+            }
+            document.getElementById("ketqua").textContent = "Kết quả: " + ketQua;
+        }
+    </script>
+</body>
+</html>

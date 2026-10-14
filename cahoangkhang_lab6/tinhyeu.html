@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h2>❤máy tính tình yêu❤</h2>
+    <label for="tenban">Tên của bạn:</label>
+    <input type="text" id="tenban">
+    <br><br>
+    <label for="tennguoiay">Tên người ấy:</label>
+    <input type="text" id="tennguoiay">
+    <button onclick="tinhTinhYeu()">Tính tỷ lệ hợp nhau</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function tinhTinhYeu() {
+            let tenBan = document.getElementById("tenban").value.trim();
+            let tenNguoiay = document.getElementById("tennguoiay").value.trim();
+
+            let tyLe = Math.floor(Math.random() * 100) + 1;
+            let thongBao;
+            if (tyLe >= 80) {
+                thongBao = "💕cưới nhau đi";
+            } else if (tyLe >= 50) {
+                thongBao = "🙆‍♂️khá hợp nhua";
+            } else {
+                thongBao = "🤦‍♂️chia tay cụ cho roi";
+            }
+            document.getElementById("ketqua").textContent = tenBan + " và " + tenNguoiay + ": " + tyLe + "% phù hợp. " + thongBao;
+        }
+    </script>
+</body>
+</html>
