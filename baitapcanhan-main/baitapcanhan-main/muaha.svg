@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500">
+<rect width="700" height="500" fill="#fff3a3"/>
+<circle cx="350" cy="210" r="100" fill="#ffd43b"/>
+<g stroke="#ff922b" stroke-width="12">
+<line x1="350" y1="40" x2="350" y2="90"/><line x1="350" y1="330" x2="350" y2="380"/>
+<line x1="180" y1="210" x2="230" y2="210"/><line x1="470" y1="210" x2="520" y2="210"/>
+</g>
+<text x="350" y="460" text-anchor="middle" font-size="42">MÙA HẠ</text>
+</svg>

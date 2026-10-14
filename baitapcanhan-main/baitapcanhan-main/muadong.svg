@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500">
+<rect width="700" height="500" fill="#d9f0ff"/>
+<polygon points="0,420 180,250 350,420" fill="#ffffff"/>
+<polygon points="250,420 480,200 700,420" fill="#ffffff"/>
+<circle cx="120" cy="100" r="45" fill="#ffffff"/>
+<text x="350" y="460" text-anchor="middle" font-size="42">MÙA ĐÔNG</text>
+</svg>
